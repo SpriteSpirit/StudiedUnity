@@ -73,7 +73,6 @@ public class CarMovement : MonoBehaviour // Объявление класса CarMovement, насле
                 // Если мы двигались вперед и нажали S, то начинаем интенсивное торможение
                 isBraking = true;
                 speed = Mathf.MoveTowards(speed, 0, brakeSpeed * Time.deltaTime);
-
             }
             else
             {

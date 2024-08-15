@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager: MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager: MonoBehaviour
     public int nextCheckpointIndex = 0;
     public int completedCircles = 0;
 
+    public Button button;
 
     private void Update()
     {
@@ -26,7 +28,7 @@ public class GameManager: MonoBehaviour
             // Обновляем цвет блока
             checkpointBlock.GetComponent<Renderer>().material.color = Color.green;
 
-            // Переходим к следующему checkpoint'у
+            // Переходим к следующему checkpoint
             nextCheckpointIndex++;
             Debug.Log(nextCheckpointIndex);
         }
@@ -37,7 +39,7 @@ public class GameManager: MonoBehaviour
         // Проверяем, все ли checkpoint'ы были коснуты перед финишем
         if (nextCheckpointIndex == checkpointBlocks.Count)
         {
-            finishBlock.GetComponent<Collider>().isTrigger = false;
+            //finishBlock.GetComponent<Collider>().isTrigger = false;
             finishBlock.GetComponent<Renderer>().material.color = Color.black;
             Debug.Log(finishBlock.name);
             Debug.Log("Круг завершен!");
@@ -63,6 +65,6 @@ public class GameManager: MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         ResetCheckpoints(block);
-        block.GetComponent<Collider>().isTrigger = true;
+        //block.GetComponent<Collider>().isTrigger = true;
     }
 }

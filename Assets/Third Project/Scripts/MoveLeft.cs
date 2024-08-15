@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     [SerializeField] float speed = 20;
-    [SerializeField] Player playerScript;
+    [SerializeField] PlayerMovementRunner playerScript;
 
     void Update()
     {

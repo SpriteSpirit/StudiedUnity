@@ -4,18 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Obstacle
-  - Enemy
-  - Block
-  - Height
-  - Low
-  - Coin
-  - Health
+  - Wall
+  - Metal
+  - Blood
+  - Dirt
+  - Concrete
+  - ExplosiveBarrel
   - Target
+  - GasTank
+  - Metal (Static)
+  - Wood (Static)
+  - Dirt (Static)
+  - Wood
+  - Block
   - Waypoints
-  - Animal
-  - Ring
+  - AimCamera
   layers:
   - Default
   - TransparentFX
@@ -25,14 +28,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - First Person View
+  - Character
+  - Post Processing
+  - Post Processing Weapon
+  - Post Processing Scope
+  - Invisible Wall
+  - Projectile
   - 
   - 
   - 

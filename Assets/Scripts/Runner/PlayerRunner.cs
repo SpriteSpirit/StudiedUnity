@@ -8,13 +8,17 @@ public class PlayerRunner : MonoBehaviour
     public float speed;
     private float height = 0.5f;
     private float low = 0.5f;
+
     public GameManager2 gm;
+    public JSONManager jsonManager;
 
     private float jumpForce = 10f;
     private Rigidbody rb;
   //  private bool isJump = false;
     public bool isGround = true;
-  
+
+
+
 
     void Start()
     {
@@ -55,14 +59,13 @@ public class PlayerRunner : MonoBehaviour
 
         if (other.CompareTag("Coin"))
         {
-            gm.score++;
+            gm.IncreaseCoins();
             Destroy(other.gameObject);
         }
 
-        if (other.CompareTag("Health") && gm.lives < 3)
+        if (other.CompareTag("Health") && jsonManager.lives < 3)
         {
-            gm.lives++;
-
+            gm.IncreaseLives();
             Destroy(other.gameObject);
         }
     }
@@ -82,9 +85,9 @@ public class PlayerRunner : MonoBehaviour
 
         if (collision.collider.tag == "Obstacle")
         {
-            gm.lives--;
+            gm.DecrementLives();
 
-            if (gm.lives <= 0)
+            if (jsonManager.lives <= 0)
             {
                 gm.game_over();
             }

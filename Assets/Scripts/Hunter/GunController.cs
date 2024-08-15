@@ -1,11 +1,7 @@
-using Assets.Scripts.Hunter;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class GunController : MonoBehaviour
 {
@@ -16,8 +12,9 @@ public class GunController : MonoBehaviour
     private float verticalAngle = 45f;  // Начальный угол
 
     private Camera _camera;
-    private Transform _spawnPoint;
+    public Transform _spawnPoint;
     private Quaternion camera_rotation;
+
 
     [Header("Crosshair")]
     public bool isZoom = false;
@@ -37,7 +34,7 @@ public class GunController : MonoBehaviour
 
         _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         camera_rotation = new Quaternion(0f, 0.707106829f, 0, 0.707106829f);
-        _spawnPoint = GetComponent<BulletSpawner>().spawn;
+        //_spawnPoint = GetComponent<BulletSpawner>().spawn;
     }
 
     private void Update()

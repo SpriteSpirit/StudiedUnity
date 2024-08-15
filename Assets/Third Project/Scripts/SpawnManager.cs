@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject[] obstacles;
-    [SerializeField] Player playerScript;
+    [SerializeField] PlayerMovementRunner playerScript;
     private int obstIndex;
 
     void Start()

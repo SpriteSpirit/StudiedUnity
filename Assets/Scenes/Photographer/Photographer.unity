@@ -23,22 +23,22 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.73
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 133347283e115d147a5fcce7f47a538f, type: 2}
-  m_HaloStrength: 0.5
+  m_SubtractiveShadowColor: {r: 0.12896048, g: 0.1859118, b: 0.3301887, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a2126534b3a11b34e977105bd9e3cc03, type: 2}
+  m_HaloStrength: 0.507
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionBounces: 2
+  m_ReflectionIntensity: 0.804
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38808668, g: 0.7278085, b: 0.7325042, a: 1}
+  m_Sun: {fileID: 21945982}
+  m_IndirectSpecularColor: {r: 0.6033035, g: 0.8011732, b: 0.8039588, a: 0.804}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9d47952a49b0ec1459dbdf4ddc5da7cf,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 365cbdba1f390da448465692345fd0fe,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -156,13 +158,13 @@ Light:
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize: 5
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
+    m_Strength: 0.671
+    m_Bias: 0.121
     m_NormalBias: 0.4
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
@@ -194,7 +196,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -211,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 21945981}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 552, y: 1406, z: -956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,6 +392,7 @@ GameObject:
   - component: {fileID: 661650419}
   - component: {fileID: 661650418}
   - component: {fileID: 661650417}
+  - component: {fileID: 661650420}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -428,10 +431,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 63f898abba1cbdf408ac4ba3f4e9daa6, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 61
+  m_TreeBillboardDistance: 5
+  m_TreeCrossFadeLength: 0
+  m_TreeMaximumFullLODCount: 0
+  m_DetailObjectDistance: 40
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -471,6 +474,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &661650420
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661650416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6accf05259fa7dd4cbd3a0debc859643, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &686808865
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +507,7 @@ GameObject:
   - component: {fileID: 686808868}
   - component: {fileID: 686808867}
   - component: {fileID: 686808866}
+  - component: {fileID: 686808870}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Animal
@@ -569,13 +594,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686808865}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03170731, y: -0.7937754, z: 0.3436755, w: 0.5008017}
-  m_LocalPosition: {x: 617.58, y: 333.48, z: 525.96}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalRotation: {x: 0.24416411, y: -0.9361701, z: 0.2472372, w: 0.053322975}
+  m_LocalPosition: {x: 616.15, y: 337.34, z: 527.79}
+  m_LocalScale: {x: 3, y: 3, z: 6.4593}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 35.265, y: -108.729, z: 21.097}
+--- !u!111 &686808870
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686808865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: eabdd574f0737cf4386a99b25006ce33, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 202b262c1b304944f8cfe8e376698593, type: 2}
+  - {fileID: 7400000, guid: eabdd574f0737cf4386a99b25006ce33, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &706479831
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +753,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!114 &706479837
 MonoBehaviour:
@@ -927,7 +969,8 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!1 &1203504595 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100050, guid: 68d8f3eae01c5744b996aab3358db0a0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 100050, guid: 68d8f3eae01c5744b996aab3358db0a0,
+    type: 3}
   m_PrefabInstance: {fileID: 1848921768}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1203504598
@@ -1207,16 +1250,19 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100052, guid: 68d8f3eae01c5744b996aab3358db0a0, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 100052, guid: 68d8f3eae01c5744b996aab3358db0a0,
+        type: 3}
       insertIndex: -1
       addedObject: {fileID: 1848921774}
-    - targetCorrespondingSourceObject: {fileID: 100050, guid: 68d8f3eae01c5744b996aab3358db0a0, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 100050, guid: 68d8f3eae01c5744b996aab3358db0a0,
+        type: 3}
       insertIndex: -1
       addedObject: {fileID: 1203504598}
   m_SourcePrefab: {fileID: 100100000, guid: 68d8f3eae01c5744b996aab3358db0a0, type: 3}
 --- !u!1 &1848921769 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100052, guid: 68d8f3eae01c5744b996aab3358db0a0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 100052, guid: 68d8f3eae01c5744b996aab3358db0a0,
+    type: 3}
   m_PrefabInstance: {fileID: 1848921768}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1848921774

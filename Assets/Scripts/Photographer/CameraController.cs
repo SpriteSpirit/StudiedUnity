@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,12 +29,9 @@ public class CameraController : MonoBehaviour
                     StartCoroutine(offLight(0.5f));
                     string filename = "screenshot.png";
                     ScreenCapture.CaptureScreenshot(filename);
+                    StartCoroutine(UpdateScreenshotTexture(filename));
                     Debug.Log("Screenshot captured: " + filename);
-
-                    Texture2D texture = new Texture2D(1, 1);
-                    texture.LoadImage(System.IO.File.ReadAllBytes(filename));
-                    screenshotImage.texture = texture;
-                    StartCoroutine(offPhoto(3f));
+                    StartCoroutine(offPhoto(2f));
                 }
             }
         }
@@ -52,5 +49,14 @@ public class CameraController : MonoBehaviour
     {
         yield return new WaitForSeconds(deltaTime);
         screenshot.SetActive(false);
+    }
+
+    IEnumerator UpdateScreenshotTexture(string filename)
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        Texture2D texture = new Texture2D(1, 1);
+        texture.LoadImage(System.IO.File.ReadAllBytes(filename));
+        screenshotImage.texture = texture;
     }
 }

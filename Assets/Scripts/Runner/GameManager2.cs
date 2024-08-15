@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,16 +15,16 @@ public class GameManager2 : MonoBehaviour
     //private Camera main_camera;
     //private Camera death_camera;
     private Animator Animation;
-
-    public int lives = 3;
+    public JSONManager jsonManager;
 
     public Sprite sprite;
     public GameObject panel;
 
 
     [HideInInspector]
-    public int score = 0;
     public int time = 0;
+
+    
 
     public void game_over()
     {
@@ -35,14 +34,19 @@ public class GameManager2 : MonoBehaviour
                                          //  death_camera.gameObject.SetActive(true);
         Debug.Log("Game over");
         updateLifeUI();
+        jsonManager.lives = 3;
+        jsonManager.coinCount = 0;
+        jsonManager.SaveData();
+
         //Animation.Play("Die");
-        // Invoke("RestartLevel", levelRestartDelay); // вызываем метод рестарт через опред. время
+        Invoke("RestartLevel", 2f); // вызываем метод рестарт через опред. время
     }
 
     void RestartLevel()
     {
         StartCoroutine(timer(1.0f));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // перезапускает текущий уровень
+
     }
 
     void Start()
@@ -54,6 +58,8 @@ public class GameManager2 : MonoBehaviour
       //  death_camera.gameObject.SetActive(false);
         Animation = player_movement.GetComponent<Animator>();
         StartCoroutine(timer(1.0f));
+        score_text.text = "COINS: " + jsonManager.coinCount.ToString();
+
     }
 
     public void updateLifeUI()
@@ -65,7 +71,7 @@ public class GameManager2 : MonoBehaviour
         }
 
         // Создаем и отображаем спрайты жизней на панели
-        for (int i = 0; i < lives; i++)
+        for (int i = 0; i < jsonManager.lives; i++)
         {
             GameObject live = new GameObject("LifeSprite");
             live.transform.SetParent(panel.transform);
@@ -87,17 +93,34 @@ public class GameManager2 : MonoBehaviour
             // movement.runSpeed += movement.increaseSpeed;
             if (player_movement.enabled == false)
             {
-                score_text.text = "SCORE: " + score.ToString();
+                score_text.text = "COINS: " + jsonManager.coinCount.ToString();
                 time_text.text = "TIME: " + time.ToString();
             }
             else
             {
                 time++;
-                score_text.text = "SCORE: " + score.ToString();
+                score_text.text = "COINS: " + jsonManager.coinCount.ToString();
                 time_text.text = "TIME: " + time.ToString();
             }
         }
     }
 
 
+    public void IncreaseCoins()
+    {
+        jsonManager.coinCount++;
+        jsonManager.SaveData();
+    }
+
+    public void IncreaseLives()
+    {
+        jsonManager.lives++;
+        jsonManager.SaveData();
+    }
+
+    public void DecrementLives()
+    {
+        jsonManager.lives--;
+        jsonManager.SaveData();
+    }
 }

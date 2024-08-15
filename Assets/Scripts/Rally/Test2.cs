@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class Test2 : MonoBehaviour
 {
-    public Test test;
+    private Test test;
+
+    private void Start()
+    {
+        test = GameObject.Find("Test").GetComponent<Test>();
+        //Debug.Log(test.apples);
+    }
+    /* public Test test;
+    *
 
 
     void Start()
@@ -17,5 +25,5 @@ public class Test2 : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }

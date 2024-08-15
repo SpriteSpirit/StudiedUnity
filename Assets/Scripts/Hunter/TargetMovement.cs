@@ -6,15 +6,16 @@ using UnityEngine;
 public class TargetMovement : MonoBehaviour
 {
     public float speed;
+    private Transform spawner;
 
     void Start()
     {
-        
+        spawner = GameObject.Find("spawner").transform;
     }
-
     
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        Vector3 direction = (spawner.position - transform.position).normalized;
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }

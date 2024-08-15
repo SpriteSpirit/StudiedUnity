@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23415105773652922}
   - component: {fileID: 64278822819048056}
   - component: {fileID: 684571030617466475}
+  - component: {fileID: -3575523529256704624}
   m_Layer: 0
   m_Name: Military target
   m_TagString: Target
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501084758933746}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!33 &33848685573292062
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -119,4 +120,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2f3f7323dfd454da155b9e7c36f7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 0.5
+--- !u!65 &-3575523529256704624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501084758933746}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.051156327, y: 0.012650923, z: 0.10195309}
+  m_Center: {x: 0, y: 0, z: -0.024601633}

@@ -7,7 +7,7 @@ public class InfinityBackground : MonoBehaviour
     private float width;
     private float speed = 20;
     private Vector3 startPosition;
-    [SerializeField] Player playerScript;
+    [SerializeField] PlayerMovementRunner playerScript;
 
     void Start()
     {

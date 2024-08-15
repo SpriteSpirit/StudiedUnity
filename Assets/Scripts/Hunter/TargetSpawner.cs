@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetSpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject prefab;
 
     public float timeSpawn = 2f;
     private float timer;
@@ -17,10 +17,11 @@ public class TargetSpawner : MonoBehaviour
     private void Update()
     {
         timer -= Time.deltaTime;
+
         if (timer <= 0)
         {
             timer = timeSpawn;
-            Instantiate(enemyPrefab, transform.position, transform.rotation);
+            Instantiate(prefab, transform.position, prefab.transform.rotation);
         }
     }
 }

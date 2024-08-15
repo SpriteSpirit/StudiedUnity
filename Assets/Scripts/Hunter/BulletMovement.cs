@@ -10,19 +10,25 @@ public class BulletMovement: MonoBehaviour
     //private GameManager3 gameManager;
     private GameManagerTest gameManager;
     private TargetList list;
-    private Transform spawner;
+    private Transform bulletSpawnerPos;
+    private Rigidbody rb;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerTest>();
         list = GameObject.Find("Main Camera").GetComponent<TargetList>();
-        spawner = GameObject.Find("Double-barrel_gun").GetComponentInChildren<BulletSpawner>().spawn;
+        // ¬ычисл€ем направление от текущей позиции пули к bulletSpawner
+        bulletSpawnerPos = GameObject.Find("BulletSpawner").transform;
+        rb = GetComponent<Rigidbody>();
     }
 
 
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        // «адаем скорость пули в этом направлении
+        rb.velocity = bulletSpawnerPos.forward * speed;
+       // Invoke("FreeMovement", 2f);
+        //transform.Translate(Vector3.up * speed * Time.deltaTime);
 
         if (transform.position.x >= -90)
         {
@@ -39,5 +45,11 @@ public class BulletMovement: MonoBehaviour
             Destroy(other.gameObject);
             Destroy(transform.gameObject);
         }
+    }
+
+    private void FreeMovement()
+    {
+        rb.velocity = Vector3.zero;
+        transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 }
